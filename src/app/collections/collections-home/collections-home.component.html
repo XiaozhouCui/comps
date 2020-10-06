@@ -2,28 +2,17 @@
 <app-table class="striped celled" [data]="data" [headers]="headers"></app-table>
 
 <app-divider>Tab Menu</app-divider>
-<div class="ui grid">
-  <div class="four wide column">
-    <div class="ui vertical fluid tabular menu">
-      <!-- { exact: false } then "Birgraphy" link will always be active, because all other links contain "./" -->
-      <a
-        [routerLinkActiveOptions]="{ exact: true }"
-        class="item"
-        routerLink="./"
-        routerLinkActive="active"
-        >Biography</a
-      >
-      <a class="item" routerLink="./companies" routerLinkActive="active"
-        >Companies</a
-      >
-      <a class="item" routerLink="./partners" routerLinkActive="active"
-        >Partners</a
-      >
-    </div>
-  </div>
-  <div class="twelve wide stretched column">
-    <div class="ui segment">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-</div>
+<app-tabs>
+  <!-- { exact: false } then "Birgraphy" link will always be active, because all other links contain "./" -->
+  <a
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="item"
+    routerLink="./"
+    routerLinkActive="active"
+    >Biography</a
+  >
+  <a class="item" routerLink="./companies" routerLinkActive="active"
+    >Companies</a
+  >
+  <a class="item" routerLink="./partners" routerLinkActive="active">Partners</a>
+</app-tabs>

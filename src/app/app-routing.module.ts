@@ -18,6 +18,12 @@ const routes: Routes = [
         (m) => m.CollectionsModule
       ),
   },
+  {
+    // Lazy loading views module
+    path: 'views',
+    loadChildren: () =>
+      import('./views/views.module').then((m) => m.ViewsModule),
+  },
   { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent },
 ];
