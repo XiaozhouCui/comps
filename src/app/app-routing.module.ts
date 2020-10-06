@@ -24,6 +24,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./views/views.module').then((m) => m.ViewsModule),
   },
+  {
+    // Lazy loading mods module
+    path: 'mods',
+    loadChildren: () => import('./mods/mods.module').then((m) => m.ModsModule),
+  },
   { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent },
 ];
